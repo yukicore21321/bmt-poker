@@ -1,0 +1,149 @@
+body{
+    margin:0;
+    background:transparent;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family: 'Tilt Warp', cursive;
+}
+
+#gameContainer{
+    display:none;
+}
+
+#gameContainer.active{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#game{
+    position:relative;
+    width:800px;
+    pointer-events:auto;
+    cursor:move;
+    user-select:none;
+}
+
+#hud{
+    width:100%;
+}
+
+/* ===== CLOSE BUTTON ===== */
+#closeBtn{
+    position:absolute;
+    top:105px;
+    right:90px;
+    width:40px;
+    cursor:pointer;
+    z-index:999;
+    transition:transform 0.3s;
+}
+
+#closeBtn:hover{
+    transform:scale(1.1);
+}
+
+/* ===== QUỸ ===== */
+#betPanel{
+    position:absolute;
+    top:355px;
+    left:38%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+#quyImg{
+    height:70px;
+}
+
+#potAmount{
+    color:#FFD700;
+    font-size:30px;
+    font-weight:bold;
+    font-family: 'Tilt Warp', cursive;
+    text-shadow:0 0 30px #FFD700;
+    position:absolute;
+    left:110px;
+    top:24px; 
+}
+
+/* ===== LÁ BÀI ===== */
+.cards{
+    position:absolute;
+    top:165px;
+    left:155px;
+    width:490px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.cards img{
+    width:85px;
+}
+
+/* ===== NÚT ===== */
+#spinBtn{
+    position:absolute;
+    bottom:70px;
+    left:150px;
+    width:230px;
+    cursor:pointer;
+    z-index:10;
+    pointer-events:auto;
+}
+
+#autoBtn{
+    position:absolute;
+    bottom:70px;
+    left:53%;
+    width:230px;
+    cursor:pointer;
+    z-index:10;
+    pointer-events:auto;
+}
+
+#stopBtn{
+    position:absolute;
+    bottom:33px;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;
+    cursor:pointer;
+    z-index:10;
+    pointer-events:auto;
+}
+
+/* ===== NÚT ÂM THANH ===== */
+#soundBtn{
+    position:absolute;
+    top:90px;
+    right:620px;
+    width:60px;
+    cursor:pointer;
+}
+
+/* ===== ANIMATION ===== */
+.spinning{
+    animation: spinAnim 0.4s linear infinite;
+    filter: blur(2px);
+}
+
+@keyframes spinAnim{
+    0%{ transform: rotateY(0deg) scale(1); }
+    50%{ transform: rotateY(180deg) scale(1.15); }
+    100%{ transform: rotateY(360deg) scale(1); }
+}
+
+.stopAnim{
+    animation: stopAnim 0.3s ease;
+}
+
+@keyframes stopAnim{
+    0%{ transform: scale(1.25); }
+    100%{ transform: scale(1); }
+}
